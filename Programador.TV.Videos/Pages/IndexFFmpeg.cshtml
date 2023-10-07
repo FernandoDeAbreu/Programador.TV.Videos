@@ -4,16 +4,23 @@
     ViewData["Title"] = "Envio e Processamento de Vídeo";
 }
 
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="videoFile" />
-    <button type="submit">Enviar Vídeo</button>
-</form>
+<div class="container mt-5">
+    <h2>Envie um vídeo para processamento:</h2>
+    <video id="videoPreview" class="video-preview" controls style="display: none;"></video>
 
-<div id="jsonResult" style="display: none;">
-    <h2>Resultado JSON:</h2>
-    <textarea id="jsonTextArea" rows="10" cols="50" readonly></textarea>
+    <form id="formEntrada" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept="video/*" required />
+            <button type="submit" class="btn btn-primary">Processar Vídeo</button>
+        </div>
+    </form>
+
+    <div id="jsonResult" class="mt-4">
+        <h2>Resultado JSON:</h2>
+        <textarea id="jsonTextArea" class="form-control" rows="10" cols="50" readonly></textarea>
+    </div>
 </div>
 
 @section Scripts {
-    <script src="~/js/site.js"></script>
+    <script src="~/js/upload.js"></script>
 }

@@ -18,14 +18,16 @@ namespace Programador.TV.Videos.Pages
                         await videoFile.CopyToAsync(stream);
                     }
 
-                    // Use FFmpegCore to process the video and collect information
                     var videoInfo = FFmpeg.GetMediaInfo(tempFilePath);
 
-                    // You can customize what information to collect and return in JSON format
                     var result = new
                     {
-                        VideoInfo = videoInfo,
-                        CustomInfo = "Additional information goes here"
+                        Nome = videoFile.FileName,
+                        TamanhoEmBytes = videoFile.Length,
+                        TipoDeMídia = videoFile.ContentType,
+                        Extensao = Path.GetExtension(videoFile.FileName),
+                        DataDeUpload = DateTime.Now,
+                        VideoInfo = videoInfo
                     };
 
                     return new JsonResult(result);

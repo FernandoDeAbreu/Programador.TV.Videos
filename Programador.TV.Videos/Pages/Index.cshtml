@@ -1,21 +1,24 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Envio e Processamento de Vídeo";
 }
 
-<div class="container">
+<div class="container mt-5">
+    <h2>Envie um vídeo para processamento:</h2>
     <video id="videoPreview" class="video-preview" controls style="display: none;"></video>
 
     <form id="formEntrada" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="videoFile"></label>
             <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept="video/*" required />
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Processar Vídeo</button>
         </div>
     </form>
 
-    <div id="videoInfo" class="mt-4"></div>
+    <div id="jsonResult" class="mt-4">
+        <h2>Resultado JSON:</h2>
+        <textarea id="jsonTextArea" class="form-control" rows="10" cols="50" readonly></textarea>
+    </div>
 </div>
 
 @section Scripts {
