@@ -5,12 +5,14 @@
 }
 
 <div class="container">
+    <video id="videoPreview" class="video-preview" controls style="display: none;"></video>
+
     <form id="formEntrada" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="videoFile">Escolha um vídeo para enviar:</label>
+            <label for="videoFile"></label>
             <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept="video/*" required />
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
     <div id="videoInfo" class="mt-4"></div>

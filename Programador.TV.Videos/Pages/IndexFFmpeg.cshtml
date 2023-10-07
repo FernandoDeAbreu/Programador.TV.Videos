@@ -1,0 +1,19 @@
+﻿@page
+@model Programador.TV.Videos.Pages.IndexFFmpegModel
+@{
+    ViewData["Title"] = "Envio e Processamento de Vídeo";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="videoFile" />
+    <button type="submit">Enviar Vídeo</button>
+</form>
+
+<div id="jsonResult" style="display: none;">
+    <h2>Resultado JSON:</h2>
+    <textarea id="jsonTextArea" rows="10" cols="50" readonly></textarea>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}

@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.video-preview {
+    width: 300px; 
+    height: auto;
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    
+}
